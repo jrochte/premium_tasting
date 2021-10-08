@@ -11,8 +11,8 @@ h2 {
 embed {
     display: block;
     margin: 0.5em auto;
-    width: 80vw;
-    height: calc(80vw * 315 / 560);
+    width: 65vw;
+    height: calc(65vw * 315 / 560);
 }
 
 .qrcode {
