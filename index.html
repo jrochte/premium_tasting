@@ -8,38 +8,46 @@
     <title>Premium Tasting!</title>
     <link rel="shortcut icon" href="Logo-EJG_Crest.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="premium_tasting.css">
     <script type="text/javascript" src="premium_tasting.js"></script>
+    <script type="text/javascript" src="timer.js"></script>
 </head>
 
-<body onload="start_timer()">
-    <h1>Spiritsmaking Premium Brandy Tasting</h2>
-        <img class="qrcode" src="./QRCode.png" alt="QR Code">
-        <div class="timer">
-            <span class="timer__part timer__part--minutes">00</span>
-            <span class="timer__part">:</span>
-            <span class="timer__part timer__part--seconds">00</span>
-            <br>
-            <button type="button" class="timer__btn timer__btn--control timer__btn--start">
-                <span class="material-icons">play_arrow</span>
-            </button>
-            <button type="button" class="timer__btn timer__btn--reset">
-                <span class="material-icons">refresh</span>
-            </button>
-            <input type="text" class="timer__input" placeholder="Min" onclick="this.select()">
-        </div>
-        <embed class="embed_video" src="https://www.youtube.com/embed/G9Ozsgc4G2I">
-        <div class="new_link">
-            <input type="text" class="new_link_input" placeholder="New Video Link" onclick="this.select()">
-            <button type="button" class="new_link_btn">
-                <span class="material-icons">download</span>
-            </button>
-        </div>
-        <!-- 
+<body onload="site_onLoad()">
+    <h1>Spiritsmaking </h1>
+    <h2>Premium Brandy Tasting</h2>
+    <img class="qrcode" src="./QRCode.png" alt="QR Code">
+
+    <div class="timer">
+        <span class="timer__part timer__part--minutes">00</span>
+        <span class="timer__part">:</span>
+        <span class="timer__part timer__part--seconds">00</span>
+        <br>
+        <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+            <span class="material-icons">play_arrow</span>
+        </button>
+        <button type="button" class="timer__btn timer__btn--reset">
+            <span class="material-icons">refresh</span>
+        </button>
+        <input type="text" class="timer__input" placeholder="Min" onclick="this.select()">
+    </div>
+    <embed class="embed_video" src="">
+    <div class="new_link">
+        <input type="text" class="new_link_input" placeholder="New Video Link" onclick="this.select()">
+        <button type="button" class="new_link_btn" onclick="refresh_Link()">
+            <span class="material-icons">download</span>
+        </button>
+    </div>
+    <div class="Darken"></div>
+    <!-- 
     <embed width=640 height=480
         src="https://forms.office.com/Pages/ResponsePage.aspx?id=iDP1pz2JpEmU35V_XO0VGCpjolxeHMpDmtHw0EFa1SFURDNGTUpKVlROWEFKSVBTR1VTTjRXTzJPUSQlQCN0PWcu&embed=true">
     </embed> 
 -->
 
 </body>
+
 </html>

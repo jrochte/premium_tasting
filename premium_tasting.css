@@ -1,11 +1,24 @@
 body {
     background: rgb(160, 160, 160);
     text-align: center;
+    overflow-x: hidden;
 }
 
-h1,
-h2 {
+.Darken {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+h1, h2 {
     margin: 0.25em;
+    font-family: 'Dancing Script', cursive;
 }
 
 embed {
@@ -20,13 +33,19 @@ embed {
     top: 0;
     left: 0;
     width: 5em;
+    z-index: 101;
     transition: all 250ms ease-in-out;
 }
 
 .qrcode:hover {
     cursor: none;
     transform-origin: top left;
-    transform: scale(10);
+    transform: scale(7);
+}
+
+.qrcode:hover~.Darken {
+    opacity: 0.75;
+    transition: all 250ms ease-in-out;
 }
 
 .timer {
@@ -83,5 +102,5 @@ embed {
 
 .new_link_input {
     font-size: 18px;
-    width: 20em;
+    width: 30em;
 }
