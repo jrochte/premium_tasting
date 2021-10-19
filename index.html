@@ -11,15 +11,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <script async src="https://www.youtube.com/iframe_api"></script>
+
     <link rel="stylesheet" href="premium_tasting.css">
+    <link rel="stylesheet" href="nav.css">
     <script type="text/javascript" src="premium_tasting.js"></script>
     <script type="text/javascript" src="timer.js"></script>
 </head>
 
 <body onload="site_onLoad()">
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <img class="qrcode" src="./QRCode.png" alt="QR Code">
+                <div class="Darken"></div>
+            </li>
+            <li class="nav__item">
+                <span class="vol_text">Speaking Volume:</span>
+                <input type="text" class="nav_input vol1" onclick="this.select()">
+                <span class="vol_text">%</span>
+            </li>
+            <li class="nav__item">
+                <span class="vol_text">Tasting Volume:</span>
+                <input type="text" class="nav_input vol2" onclick="this.select()">
+                <span class="vol_text">%</span>
+            </li>
+            <li class="nav__item">
+                <span class="vol_text">Default Timer:</span>
+                <input type="text" class="nav_input default_mins" onclick="this.select()">
+                <span class="vol_text">mins</span>
+            </li>
+            <li class="nav__item">
+                <span class="vol_text">Youtube Video ID: </span>
+                <input type="text" class="nav_input new_link_input" onclick="this.select()">
+            </li>
+            <li>
+                <button type="button" class="nav_btn" onclick="refresh_Link()">
+                    <span class="material-icons">download</span>
+                </button>
+            </li>
+        </ul>
+        <div class="toggle">
+            <span class="material-icons" id="expand-arrow">expand_more</span>
+        </div>
+    </nav>
+
     <h1>Spiritsmaking </h1>
     <h2>Premium Brandy Tasting</h2>
-    <img class="qrcode" src="./QRCode.png" alt="QR Code">
 
     <div class="timer">
         <span class="timer__part timer__part--minutes">00</span>
@@ -34,19 +74,7 @@
         </button>
         <input type="text" class="timer__input" placeholder="Min" onclick="this.select()">
     </div>
-    <embed class="embed_video" src="">
-    <div class="new_link">
-        <input type="text" class="new_link_input" placeholder="New Video Link" onclick="this.select()">
-        <button type="button" class="new_link_btn" onclick="refresh_Link()">
-            <span class="material-icons">download</span>
-        </button>
-    </div>
-    <div class="Darken"></div>
-    <!-- 
-    <embed width=640 height=480
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=iDP1pz2JpEmU35V_XO0VGCpjolxeHMpDmtHw0EFa1SFURDNGTUpKVlROWEFKSVBTR1VTTjRXTzJPUSQlQCN0PWcu&embed=true">
-    </embed> 
--->
+    <div class="embed_video" id="yt_player"></div>
 
 </body>
 

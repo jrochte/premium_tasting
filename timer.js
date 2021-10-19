@@ -1,5 +1,5 @@
 class Timer {
-    constructor(root) {
+    constructor(root, initial_mins) {
         this.el = {
             minutes: document.querySelector(".timer__part--minutes"),
             seconds: document.querySelector(".timer__part--seconds"),
@@ -9,6 +9,7 @@ class Timer {
         //console.log(this.el);
         this.interval = null;
         this.remainingSeconds = 0;
+        var inputMinutes;
 
         this.el.control.addEventListener("click", () => {
             if (this.interval === null) {
@@ -19,8 +20,12 @@ class Timer {
         });
 
         this.el.reset.addEventListener("click", () => {
-            var inputMinutes = document.querySelector(".timer__input").value;
-
+            if (document.querySelector(".timer__input").value != "") {
+                inputMinutes = document.querySelector(".timer__input").value;
+            } else {
+                inputMinutes = saved_default_mins;
+            }
+            
             if (inputMinutes < 60) {
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
@@ -51,13 +56,15 @@ class Timer {
 
     start() {
         if (this.remainingSeconds === 0) return;
+        player.setVolume(saved_tasting_vol);
+
         this.interval = setInterval(() => {
             this.remainingSeconds--;
             this.updateInterfaceTime();
 
-            if (this.remainingSeconds === 0) {
+            if (this.remainingSeconds <= 0) {
                 this.stop();
-                this.play();
+                this.alarm();
             }
         }, 1000);
         this.updateInterfaceControls();
@@ -67,11 +74,12 @@ class Timer {
         clearInterval(this.interval);
         this.interval = null;
         this.updateInterfaceControls();
+        player.setVolume(saved_speaking_vol);
     }
 
-    play() {
+    alarm() {
         var audio = new Audio("./alarm.wav");
         audio.play();
+        player.setVolume(saved_speaking_vol);
     }
 }
-

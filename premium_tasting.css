@@ -4,48 +4,17 @@ body {
     overflow-x: hidden;
 }
 
-.Darken {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0;
-    z-index: 100;
-    pointer-events: none;
-}
-
 h1, h2 {
     margin: 0.25em;
     font-family: 'Dancing Script', cursive;
 }
-
-embed {
-    display: block;
-    margin: 0.5em auto;
-    width: 65vw;
-    height: calc(65vw * 315 / 560);
+h1 {
+    margin-top: 1em;
 }
 
-.qrcode {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5em;
-    z-index: 101;
-    transition: all 250ms ease-in-out;
-}
-
-.qrcode:hover {
-    cursor: none;
-    transform-origin: top left;
-    transform: scale(7);
-}
-
-.qrcode:hover~.Darken {
-    opacity: 0.75;
-    transition: all 250ms ease-in-out;
+.embed_video {
+    width: 75vw;
+    height: calc(75vw * 315 / 560);
 }
 
 .timer {
@@ -55,7 +24,7 @@ embed {
     padding: 1.25em;
     margin: 1em auto;
     border-radius: 30px;
-    background: rgb(226, 226, 226);
+    background: rgb(207, 207, 207);
 }
 
 .timer__part {
@@ -63,8 +32,7 @@ embed {
     font-weight: bold;
 }
 
-.timer__input,
-.new_link_input {
+.timer__input {
     font-size: 36px;
     font-weight: bold;
     text-align: center;
@@ -74,8 +42,7 @@ embed {
     width: 2em;
 }
 
-.timer__btn,
-.new_link_btn {
+.timer__btn{
     width: 50px;
     height: 50px;
     margin-left: 16px;
@@ -94,13 +61,3 @@ embed {
     background: #ff0256;
 }
 
-.new_link_btn {
-    width: 50px;
-    height: 50px;
-    background: lightgreen;
-}
-
-.new_link_input {
-    font-size: 18px;
-    width: 30em;
-}
