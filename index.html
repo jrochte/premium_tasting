@@ -25,26 +25,30 @@
     <nav class="nav">
         <ul class="nav__list">
             <li class="nav__item">
-                <img class="qrcode" src="./QRCode.png" alt="QR Code">
+                <!-- <img class="qrcode" src="./QRCode.png" alt="QR Code"> -->
+                <img class="the_qrcode" src="" alt="QR Code">
+                <br>
+                <span class="nav_text">New QR Code:</span>
+                <input type="file" id="QRCode_input" onchange="update_QRCode()">
                 <div class="Darken"></div>
             </li>
             <li class="nav__item">
-                <span class="vol_text">Speaking Volume:</span>
+                <span class="nav_text">Speaking Volume:</span>
                 <input type="text" class="nav_input vol1" onclick="this.select()">
-                <span class="vol_text">%</span>
+                <span class="nav_text">%</span>
             </li>
             <li class="nav__item">
-                <span class="vol_text">Tasting Volume:</span>
+                <span class="nav_text">Tasting Volume:</span>
                 <input type="text" class="nav_input vol2" onclick="this.select()">
-                <span class="vol_text">%</span>
+                <span class="nav_text">%</span>
             </li>
             <li class="nav__item">
-                <span class="vol_text">Default Timer:</span>
+                <span class="nav_text">Default Timer:</span>
                 <input type="text" class="nav_input default_mins" onclick="this.select()">
-                <span class="vol_text">mins</span>
+                <span class="nav_text">mins</span>
             </li>
             <li class="nav__item">
-                <span class="vol_text">Youtube Video ID: </span>
+                <span class="nav_text">Youtube Video ID: </span>
                 <input type="text" class="nav_input new_link_input" onclick="this.select()">
             </li>
             <li>

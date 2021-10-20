@@ -49,7 +49,7 @@
     transform: translateY(0%);
 }
 
-.qrcode {
+.the_qrcode {
     position: relative;
     top: 0;
     width: 5em;
@@ -69,13 +69,13 @@
     pointer-events: none;
 }
 
-.qrcode:hover {
+.the_qrcode:hover {
     cursor: none;
     transform-origin: top;
     transform: scale(7);
 }
 
-.qrcode:hover~.Darken {
+.the_qrcode:hover~.Darken {
     opacity: 0.75;
     transition: all 250ms ease-in-out;
 }
@@ -92,7 +92,7 @@
     width: 8em;
 }
 
-.vol_text {
+.nav_text {
     font-weight: bold;
     font-size: 1.25em;
     font-family: 'Dancing Script', cursive;
