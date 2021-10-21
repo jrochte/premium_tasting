@@ -21,7 +21,10 @@ function site_onLoad() {
     document.querySelector(".vol1").value = saved_speaking_vol;
     document.querySelector(".vol2").value = saved_tasting_vol;
     document.querySelector(".default_mins").value = saved_default_mins;
-    document.querySelector(".the_qrcode").src = saved_QRCode;
+    if (saved_QRCode != ""){
+        document.querySelector(".the_qrcode").src = saved_QRCode;
+    }
+    
 
     new Timer(document.querySelector(".timer"), saved_default_mins);
 
