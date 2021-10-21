@@ -21,6 +21,12 @@
     z-index: 10;
 }
 
+.intro_stuff {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .toggle {
     position: absolute;
     bottom: inherit;
@@ -41,6 +47,11 @@
     text-align: center;
 }
 
+.nav__item {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .nav_btn {
     background: lightgreen;
     padding: 0.5em 1.5em;
@@ -49,6 +60,10 @@
     border-radius: 1.5em;
     cursor: pointer;
     transition-duration: 0.2s;
+}
+
+.nav_btn_help {
+    background: pink;
 }
 
 .nav_btn:hover {
@@ -109,6 +124,8 @@
     font-family: 'Dancing Script', cursive;
 }
 
-.vol1, .vol2, .default_mins {
+.vol1,
+.vol2,
+.default_mins {
     width: 2em;
 }

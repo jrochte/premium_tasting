@@ -20,9 +20,13 @@ class Timer {
             }
         });
 
-        this.el.reset.addEventListener("click", () => {this.resetIt()});
+        this.el.reset.addEventListener("click", () => {
+            this.resetIt()
+        });
 
-        this.el.input.addEventListener("change", () => {this.resetIt()});
+        this.el.input.addEventListener("change", () => {
+            this.resetIt()
+        });
     }
 
     updateInterfaceTime() {
