@@ -4,12 +4,13 @@ class Timer {
             minutes: document.querySelector(".timer__part--minutes"),
             seconds: document.querySelector(".timer__part--seconds"),
             control: document.querySelector(".timer__btn--control"),
-            reset: document.querySelector(".timer__btn--reset")
+            reset: document.querySelector(".timer__btn--reset"),
+            input: document.querySelector(".timer__input")
         };
         //console.log(this.el);
         this.interval = null;
         this.remainingSeconds = 0;
-        var inputMinutes;
+        this.inputMinutes;
 
         this.el.control.addEventListener("click", () => {
             if (this.interval === null) {
@@ -19,19 +20,9 @@ class Timer {
             }
         });
 
-        this.el.reset.addEventListener("click", () => {
-            if (document.querySelector(".timer__input").value != "") {
-                inputMinutes = document.querySelector(".timer__input").value;
-            } else {
-                inputMinutes = saved_default_mins;
-            }
-            
-            if (inputMinutes < 60) {
-                this.stop();
-                this.remainingSeconds = inputMinutes * 60;
-                this.updateInterfaceTime();
-            }
-        });
+        this.el.reset.addEventListener("click", () => {this.resetIt()});
+
+        this.el.input.addEventListener("change", () => {this.resetIt()});
     }
 
     updateInterfaceTime() {
@@ -75,6 +66,20 @@ class Timer {
         this.interval = null;
         this.updateInterfaceControls();
         player.setVolume(saved_speaking_vol);
+    }
+
+    resetIt() {
+        if (document.querySelector(".timer__input").value != "") {
+            this.inputMinutes = document.querySelector(".timer__input").value;
+        } else {
+            this.inputMinutes = saved_default_mins;
+        }
+
+        if (this.inputMinutes < 60) {
+            this.stop();
+            this.remainingSeconds = this.inputMinutes * 60;
+            this.updateInterfaceTime();
+        }
     }
 
     alarm() {
