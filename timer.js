@@ -13,19 +13,23 @@ class Timer {
         this.inputMinutes;
 
         this.el.control.addEventListener("click", () => {
-            if (this.interval === null) {
-                this.start();
-            } else {
-                this.stop();
-            }
+            this.theControl();
         });
 
         this.el.reset.addEventListener("click", () => {
-            this.resetIt()
+            this.resetIt();
         });
 
         this.el.input.addEventListener("change", () => {
-            this.resetIt()
+            this.resetIt();
+        });
+
+        document.querySelector(".timer").addEventListener("keydown", event => {
+            if (event.key == "k") {
+                this.theControl();
+            } else if (event.key == "r") {
+                this.resetIt();
+            }
         });
     }
 
@@ -46,6 +50,14 @@ class Timer {
             this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
             this.el.control.classList.add("timer__btn--stop");
             this.el.control.classList.remove("timer__btn--start");
+        }
+    }
+
+    theControl(){
+        if (this.interval === null) {
+            this.start();
+        } else {
+            this.stop();
         }
     }
 

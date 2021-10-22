@@ -29,6 +29,10 @@ h1 {
     background: rgb(207, 207, 207);
 }
 
+.timer:focus {
+    outline: none;
+}
+
 .timer__part {
     font-size: 84px;
     font-weight: bold;
